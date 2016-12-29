@@ -17,5 +17,4 @@
 #undef MOUSEKEY_MAX_SPEED
 #define MOUSEKEY_MAX_SPEED 11
 
-
 #endif

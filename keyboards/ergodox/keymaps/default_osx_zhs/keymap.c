@@ -156,11 +156,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * |        |      |      |      |      |      |      |           |      |      |      |      |      | Mute |  Play  |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |        |M.Acl2|      | MsUp |      |      |      |           |      |      |      |  Up  |      |      |  VolUp |
+ * |        |      |      | MsUp |      |      |      |           |      |      |      |  Up  |      |M.Acl2|  VolUp |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |M.Acl1|MsLeft|MsDown|MsRght|      |------|           |------|      | Left | Down | Right|      |  VolDn |
+ * |        |      |MsLeft|MsDown|MsRght|      |------|           |------|      | Left | Down | Right|M.Acl1|  VolDn |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * |        |M.Acl0| Lclk | Mclk | Rclk |      |      |           |      |      | ScrL | ScrU | ScrR |      |        |
+ * |        |      | Lclk | Mclk | Rclk |      |      |           |      |      | ScrL | ScrU | ScrR |M.Acl0|        |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |      |      |      |      |      |                                       |      | ScrD |      |      |      |
  *   `----------------------------------'                                       `----------------------------------'
@@ -175,18 +175,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // MEDIA AND MOUSE
 [MDIA] = KEYMAP(
        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-       _______, KC_ACL2, XXXXXXX, KC_MS_U, XXXXXXX, XXXXXXX, XXXXXXX,
-       _______, KC_ACL1, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX,
-       _______, KC_ACL0, KC_BTN1, KC_BTN3, KC_BTN2, XXXXXXX, XXXXXXX,
+       _______, XXXXXXX, XXXXXXX, KC_MS_U, XXXXXXX, XXXXXXX, XXXXXXX,
+       _______, XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX,
+       _______, XXXXXXX, KC_BTN1, KC_BTN3, KC_BTN2, XXXXXXX, XXXXXXX,
        _______, _______, _______, _______, _______,
                                            KC_TRNS, KC_TRNS,
                                                     KC_TRNS,
                                   KC_TRNS, KC_TRNS, KC_TRNS,
     // right hand
        XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_MUTE, KC_MPLY,
-       XXXXXXX,  XXXXXXX, XXXXXXX, KC_UP,   XXXXXXX, XXXXXXX, KC_VOLU,
-                 XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, KC_VOLD,
-       XXXXXXX,  XXXXXXX, KC_WH_L, KC_WH_U, KC_WH_R, XXXXXXX, _______,
+       XXXXXXX,  XXXXXXX, XXXXXXX, KC_UP,   XXXXXXX, KC_ACL2, KC_VOLU,
+                 XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_ACL1, KC_VOLD,
+       XXXXXXX,  XXXXXXX, KC_WH_L, KC_WH_U, KC_WH_R, KC_ACL0, _______,
                           _______, KC_WH_D, _______, _______, _______,
        KC_TRNS, KC_TRNS,
        KC_TRNS,
