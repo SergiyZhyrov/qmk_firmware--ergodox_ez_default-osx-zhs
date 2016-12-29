@@ -3,11 +3,9 @@
 
 #include "../../config.h"
 
-/* 20
+/* 20 */
 #undef MOUSEKEY_TIME_TO_MAX
-#define MOUSEKEY_TIME_TO_MAX 10
-*/
-
+#define MOUSEKEY_TIME_TO_MAX 30
 
 /* 127 */
 #undef MOUSEKEY_MOVE_MAX
