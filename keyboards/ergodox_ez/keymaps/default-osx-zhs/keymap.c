@@ -10,6 +10,8 @@
 #define _SYM 2
 #define _NAV 3
 
+// how to build: make ergodox_ez:default-osx-zhs
+
 // Fillers to make layering more clear
 #define _______ KC_TRNS
 #define XXXXXXX KC_NO
