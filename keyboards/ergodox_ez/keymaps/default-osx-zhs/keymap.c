@@ -29,11 +29,11 @@
 enum custom_keycodes {
     CUSTOM_KEYCODE_MIN = SAFE_RANGE,
     C_LCtrl,
-    C_RCtrl,
+    // C_RCtrl,
     C_LGui,
-    C_RGui,
+    // C_RGui,
     C_LAlt,
-    C_RAlt,
+    // C_RAlt,
     CUSTOM_KEYCODE_MAX
 };
 
@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |--------+------+------+------+------+------|   =  |           |   ]  |------+------+------+------+------+--------|
    * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
    * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
-   *   | ~_SYM| LCtrl|C_LAlt|C_LGui| ~_NAV|                                       | ~_NAV| RGui | RAlt | RCtrl| ~_SYM|
+   *  | ~_SYM|C_LCtrl|C_LAlt|C_LGui| ~_NAV|                                       | ~_NAV|C_LGui|C_LAlt|C_LCtrl| ~_SYM|
    *   `----------------------------------'                                       `----------------------------------'
    *                                        ,-------------.       ,-------------.
    *                                        |      | Home |       |  App |      |
@@ -65,7 +65,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           KC_TAB,          KC_Q,         KC_W,        KC_E,        KC_R,     KC_T,   KC_MINS,
           KC_LSFT,         KC_A,         KC_S,        KC_D,        KC_F,     KC_G,
           KC_LSFT,         CTL_T(KC_Z),  ALT_T(KC_X), GUI_T(KC_C), KC_V,     KC_B,   KC_EQL,
-          MO(_SYM),        KC_LCTL,      C_LAlt,      C_LGui,      MO(_NAV),
+          MO(_SYM),        C_LCtrl,      C_LAlt,      C_LGui,      MO(_NAV),
+          // MO(_SYM),        KC_LCTL,      KC_LALT,      KC_LGUI,      MO(_NAV),
                                                                              XXXXXXX, KC_HOME,
                                                                                       KC_END,
                                                                      KC_SPC, KC_BSPC, KC_GRV,
@@ -74,7 +75,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                KC_LBRC,     KC_Y,   KC_U,     KC_I,           KC_O,          KC_P,            KC_QUOT,
                             KC_H,   KC_J,     KC_K,           KC_L,          KC_SCLN,         KC_BSLS,
                KC_RBRC,     KC_N,   KC_M,     GUI_T(KC_COMM), ALT_T(KC_DOT), CTL_T(KC_SLSH),  KC_RSFT,
-                                    MO(_NAV), KC_RGUI,        KC_RALT,       KC_RCTL,         MO(_SYM),
+                                    MO(_NAV), C_LGui,         C_LAlt,        C_LCtrl,         MO(_SYM),
+                                    // MO(_NAV), KC_RGUI,        KC_RALT,      KC_RCTL,          MO(_SYM),
                KC_APP,  XXXXXXX,
                KC_PGUP,
                KC_PGDN, KC_DELT, KC_ENT
@@ -90,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      | |      |------+------+------+------+------+--------|
  * | LShift |   ;  |   Q  |   J  |   K  |   X  |      | |      |   B  |   M  |   W  |   V  |   Z  | RShift |
  * `--------+------+------+------+------+-------------' `-------------+------+------+------+------+--------'
- *   |      |      |C_LAlt|C_LGui|      |                             |      |      |      |      |      |
+ *   |      |      |      |      |      |                             |      |      |      |      |      |
  *   `----------------------------------'                             `----------------------------------'
  *                                      ,-------------. ,-------------.
  *                                      |      |      | |      |      |
@@ -107,7 +109,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  KC_SLSH,        KC_COMM, KC_DOT,  KC_P,    KC_Y,    XXXXXXX,
         KC_LSFT, KC_A,           KC_O,    KC_E,    KC_U,    KC_I,
         KC_LSFT, KC_SCLN,        KC_Q,    KC_J,    KC_K,    KC_X,    XXXXXXX,
-        _______, _______,        C_LAlt,  C_LGui, _______,
+        // _______, C_LCtrl,      C_LAlt,      C_LGui, _______,
+        _______, _______, _______, _______, _______,
                                                             _______, _______,
                                                                      _______,
                                                    _______, _______, _______,
@@ -116,6 +119,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         XXXXXXX, KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    _______,
                  KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    _______,
         XXXXXXX, KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_RSFT,
+                          // _______, C_RGui,  C_RAlt,  C_RCtrl,  _______,
                           _______, _______, _______, _______, _______,
         _______, _______,
         _______,
@@ -211,11 +215,11 @@ static int DVR_to_QWR__MODS_flags = 0;
 enum DVR_to_QWR__MOD
 {
     DVR_to_QWR__MOD__LCtrl  = (1 << 0),
-    DVR_to_QWR__MOD__RCtrl  = (1 << 1),
+    //DVR_to_QWR__MOD__RCtrl  = (1 << 1),
     DVR_to_QWR__MOD__LGui   = (1 << 2),
-    DVR_to_QWR__MOD__RGui   = (1 << 3),
+    // DVR_to_QWR__MOD__RGui   = (1 << 3),
     DVR_to_QWR__MOD__LAlt   = (1 << 4),
-    DVR_to_QWR__MOD__RAlt   = (1 << 5)
+    // DVR_to_QWR__MOD__RAlt   = (1 << 5)
 };
 
 bool is_custom_keycode(uint16_t keycode)
@@ -236,11 +240,11 @@ uint16_t get_flag_for_custom_keycode(uint16_t custom_keycode)
     switch (custom_keycode)
     {
         case C_LCtrl:   return DVR_to_QWR__MOD__LCtrl;
-        case C_RCtrl:   return DVR_to_QWR__MOD__RCtrl;
+        // case C_RCtrl:   return DVR_to_QWR__MOD__RCtrl;
         case C_LGui:    return DVR_to_QWR__MOD__LGui;
-        case C_RGui:    return DVR_to_QWR__MOD__RGui;
+        // case C_RGui:    return DVR_to_QWR__MOD__RGui;
         case C_LAlt:    return DVR_to_QWR__MOD__LAlt;
-        case C_RAlt:    return DVR_to_QWR__MOD__RAlt;
+        // case C_RAlt:    return DVR_to_QWR__MOD__RAlt;
         default:        return 0;
     }
 }
@@ -250,11 +254,11 @@ uint16_t get_mod_for_custom_keycode(uint16_t custom_keycode)
     switch (custom_keycode)
     {
         case C_LCtrl:   return MOD_LCTL;
-        case C_RCtrl:   return MOD_RCTL;
+        // case C_RCtrl:   return MOD_RCTL;
         case C_LGui:    return MOD_LGUI;
-        case C_RGui:    return MOD_RGUI;
+        // case C_RGui:    return MOD_RGUI;
         case C_LAlt:    return MOD_LALT;
-        case C_RAlt:    return MOD_RALT;
+        // case C_RAlt:    return MOD_RALT;
         default:        return 0;
     }
 }
@@ -269,10 +273,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
         {
             if (record->event.pressed)
             {
+              // register_code(KC_LCTL);
+              // unregister_code(KC_LCTL);
+
                 uint16_t mod      = get_mod_for_custom_keycode(custom_keycode);
                 uint16_t mod_flag = get_flag_for_custom_keycode(custom_keycode);
 
-                layer_move(_QWR);
+                // layer_move(_QWR);
+                layer_off(_DVR);
+
                 register_mods(mod);
 
                 // store `flag` manualy registered `mod`
@@ -302,11 +311,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record)
                     DVR_to_QWR__MODS_flags &= ~mod_flag;
                     if (0 == DVR_to_QWR__MODS_flags)
                     {
-                        layer_move(_DVR);
+                      layer_on(_DVR);
+                        // layer_move(_DVR);
                     }
                 }
             }
         }
+
+        return false;
     }
 
     return true;
